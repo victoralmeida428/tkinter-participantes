@@ -8,7 +8,7 @@ class GerarRelatorio:
         '''modulo: Número do modulo a ser puxado da API'''
         self.__anos = anos
         self.__modulo = modulo
-        self.__dfs = [pd.read_csv(f'https://estatapi.controllab.com/resultados_ano/{ano}/mod/{self.__modulo}?csv=1&sa=1&ava=1&abertas=0',
+        self.__dfs = [pd.read_csv(URL_API,
                 # acrescentando &cache=0 força atualização do link
                 sep='|', low_memory=False) for ano in self.__anos]
 
